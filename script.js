@@ -2,13 +2,13 @@
 
 $().ready(function(){
   
-  $("#barcode, #batch").scannerDetection({
+    $("#barcode, #batch").scannerDetection({
   
   timeBeforeScanTest: 200, // wait for the next character for upto 200ms
 	avgTimeByChar: 100, // it's not a barcode if a character takes longer than 100ms
 	onComplete: function(barcode, qty){
     
-    alert(barcode);
+    $("#gross").focus();
     
     } // main callback function	
   
