@@ -7,16 +7,19 @@
 </head>
 
 <body>
-    <h1>Weigh Container</h1>
+  <h1>KeyCodes Detection</h1>
 
-  <input type="text" placeholder="Scan barcode" id="barcode">
+  <input type="text" placeholder="Keydown" id="keydown">
   <br />
-  <input type="text" placeholder="Gross" id="gross">
+  <input type="text" placeholder="Keypress" id="keypress">
+  <br />
+  <input type="text" placeholder="Key Up" id="keyup">
 
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-  <script src='https://rawgit.com/kabachello/jQuery-Scanner-Detection/master/jquery.scannerdetection.js'></script>
-  <script src="script.js?v=1"></script>
+<br />
+<button>View Key Codes</button>
+<p id="keyCodesView"></p>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>  
+  <script src="script.js"></script>
 </body>
 
 </html>
