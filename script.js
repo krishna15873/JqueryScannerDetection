@@ -2,18 +2,44 @@
 
 $().ready(function(){
   
-    $("#barcode, #batch").scannerDetection({
+  var keyCodeUp='';
+  var keyCodeDown='';
+  var keyCodePress='';
   
-  	//timeBeforeScanTest: 200, // wait for the next character for upto 200ms
-	avgTimeByChar: 100,
-        endChar: [13],
-	onComplete: function(barcode, qty){
+  $("#keydown").on("keydown",function(e){
+    keyCodeDown+=e.which+" - ";
+  })
+  
+  $("#keypress").on("keypress",function(e){
+    keyCodePress+=e.which+" - ";
     
-    $("#gross").focus();
+  })
+  
+  $("#keyup").on("keyup",function(e){
+    keyCodeUp+=e.which+" - ";
+  })
+  
+  
+  $("button").click(function(){
+    console.log("View Codes");
     
-    } // main callback function	
+    $("#keyCodesView").html('');
+    
+    var htmlLong="Key Down =["+ keyCodeDown +"] <br/>";
+    htmlLong+="Key Press =["+keyCodePress+"] <br/>";
+    htmlLong+="Key Up =["+keyCodeUp+"] <br/>";
+    
+    
+    $("#keyCodesView").html(htmlLong);
+  
+  
+  keyCodeUp='';
+   keyCodeDown='';
+   keyCodePress='';
   
     
   });
+  
+  
   
 });
